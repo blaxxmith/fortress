@@ -1,9 +1,9 @@
 (function() {
-    var implementors = Object.fromEntries([["frtrs",[["impl Subcommand for <a class=\"enum\" href=\"frtrs/helpers/cli/enum.Commands.html\" title=\"enum frtrs::helpers::cli::Commands\">Commands</a>"]]]]);
+    const implementors = Object.fromEntries([["frtrs",[["impl Subcommand for <a class=\"enum\" href=\"frtrs/helpers/cli/enum.Commands.html\" title=\"enum frtrs::helpers::cli::Commands\">Commands</a>",0]]]]);
     if (window.register_implementors) {
         window.register_implementors(implementors);
     } else {
         window.pending_implementors = implementors;
     }
 })()
-//{"start":57,"fragment_lengths":[157]}
+//{"start":59,"fragment_lengths":[159]}
