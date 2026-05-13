@@ -177,12 +177,11 @@ Préconditions : Coffre avec une entrée `view_id`.
 - Créer coffre et `add view_id` comme précédemment.
 - `printf "masterpw\n" | ./target/debug/frtrs view view_id --file "$FILE"` -> vérifier sortie contenant
   `The decoded password is:`
--
-`printf "masterpw\n" | ./target/debug/frtrs view no_such_id --file "$FILE"` -> vérifier code de sortie non nul et message d'erreur.
-Résultat attendu : `view view_id` affiche le mot de passe décodé,
-`view no_such_id` renvoie une erreur identifiant manquant.
+- `printf "masterpw\n" | ./target/debug/frtrs view no_such_id --file "$FILE"` -> vérifier code de sortie non nul et message d'erreur.
+  Résultat attendu : `view view_id` affiche le mot de passe décodé,
+  `view no_such_id` renvoie une erreur identifiant manquant.
 
----
+  ***
 
 ### Test #6 : Copie vers le presse-papiers (comportement utilisateur)
 
@@ -206,11 +205,10 @@ Préconditions : Coffre avec `remove_id`.
 
 - Ajouter `remove_id`.
 - `printf "masterpw\n" | ./target/debug/frtrs remove remove_id --file "$FILE"` -> vérifier code 0.
--
-`printf "masterpw\n" | ./target/debug/frtrs remove remove_id --file "$FILE"` -> vérifier code non nul et message d'erreur IdNotFound.
-Résultat attendu : Le premier `remove` réussit; le second échoue avec message IdNotFound.
+- `printf "masterpw\n" | ./target/debug/frtrs remove remove_id --file "$FILE"` -> vérifier code non nul et message d'erreur IdNotFound.
+  Résultat attendu : Le premier `remove` réussit; le second échoue avec message IdNotFound.
 
----
+  ***
 
 ### Test #8 : Intégrité du fichier — tampering (détection de modification)
 
@@ -316,35 +314,35 @@ assorties de critères d’acceptation précis.
 
 ### Sprint 1 — Stabilisation et qualité
 
-* Compléter les tests unitaires et d’intégration pour les commandes existantes (p3, p1) — priorité P0. La couverture
+- Compléter les tests unitaires et d’intégration pour les commandes existantes (p3, p1) — priorité P0. La couverture
   doit être augmentée et l’ensemble des tests doit être valide en intégration continue.
-* Ajouter l’épuration mémoire des secrets (p1, p2) — priorité P1. Les secrets doivent être nettoyés après usage et ce
+- Ajouter l’épuration mémoire des secrets (p1, p2) — priorité P1. Les secrets doivent être nettoyés après usage et ce
   comportement validé par des tests.
-* Renforcer le verrouillage de fichier et les écritures atomiques (p1) — priorité P0. Des tests de concurrence doivent
+- Renforcer le verrouillage de fichier et les écritures atomiques (p1) — priorité P0. Des tests de concurrence doivent
   démontrer l’absence de corruption.
-* Automatiser et renforcer les vérifications CI, incluant la couverture et l’audit des dépendances (p3) — priorité P1.
+- Automatiser et renforcer les vérifications CI, incluant la couverture et l’audit des dépendances (p3) — priorité P1.
 
 ### Sprint 2 — Renforcement cryptographique
 
-* Implémenter et tester Argon2 comme option de KDF (p2, p1) — priorité P0. Les migrations et la compatibilité doivent
+- Implémenter et tester Argon2 comme option de KDF (p2, p1) — priorité P0. Les migrations et la compatibilité doivent
   être validées.
-* Mettre en place du fuzzing sur les parseurs et sérialiseurs (p3) — priorité P1. Les crashs identifiés doivent être
+- Mettre en place du fuzzing sur les parseurs et sérialiseurs (p3) — priorité P1. Les crashs identifiés doivent être
   corrigés.
-* Planifier et initier un audit de sécurité externe (p2, p4) — priorité P1.
+- Planifier et initier un audit de sécurité externe (p2, p4) — priorité P1.
 
 ### Sprint 3 — Packaging et releases
 
-* Automatiser les builds multiplateformes et la signature des artefacts (p4, p3) — priorité P0.
-* Mettre en place des builds reproductibles et des tests d’intégrité (p3) — priorité P1.
-* Documenter les procédures de release et de rollback (p4) — priorité P1.
+- Automatiser les builds multiplateformes et la signature des artefacts (p4, p3) — priorité P0.
+- Mettre en place des builds reproductibles et des tests d’intégrité (p3) — priorité P1.
+- Documenter les procédures de release et de rollback (p4) — priorité P1.
 
 ### Sprint 4 — Fonctionnalités utilisateur et maintenance
 
-* Renforcer la gestion du presse-papiers avec timeout et option de désactivation (p1, p4) — priorité P1.
-* Implémenter l’export et l’import chiffrés avec outils de restauration (p1, p3) — priorité P1.
-* Traiter la dette technique identifiée (p1, p3) — priorité P2.
+- Renforcer la gestion du presse-papiers avec timeout et option de désactivation (p1, p4) — priorité P1.
+- Implémenter l’export et l’import chiffrés avec outils de restauration (p1, p3) — priorité P1.
+- Traiter la dette technique identifiée (p1, p3) — priorité P2.
 
 ### Maintenance continue
 
-* Surveillance régulière des dépendances et correction des vulnérabilités (p2).
-* Gestion des correctifs critiques via des hotfixes dédiés, avec tests accélérés et publication rapide (p1, p2, p3).\
+- Surveillance régulière des dépendances et correction des vulnérabilités (p2).
+- Gestion des correctifs critiques via des hotfixes dédiés, avec tests accélérés et publication rapide (p1, p2, p3).\

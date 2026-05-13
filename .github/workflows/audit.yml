@@ -2,9 +2,9 @@ name: "Audit Cargo Dependencies"
 on:
   push:
     paths:
-      - '.github/workflows/audit.yml'
-      - '**/Cargo.toml'
-      - '**/Cargo.lock'
+      - ".github/workflows/audit.yml"
+      - "**/Cargo.toml"
+      - "**/Cargo.lock"
   workflow_dispatch:
 
 jobs:

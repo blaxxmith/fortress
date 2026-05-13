@@ -1,6 +1,6 @@
 # Fortress
 
-*A simple password safe, written in Rust.*
+_A simple password safe, written in Rust._
 
 ## Concepts
 
@@ -9,19 +9,19 @@ Each time you want to use the vault, you will be asked for this password.
 
 First, create a vault file (by default it will create the vault at `/tmp/vault.frt`):
 
- ```sh
- frtrs create
- ```
+```sh
+frtrs create
+```
 
 Then, add entries to the vault (see docs to know more about the arguments):
 
- ```sh
- frtrs add <identifier> --username <username> --password <password>
- ```
+```sh
+frtrs add <identifier> --username <username> --password <password>
+```
 
 > [!IMPORTANT]
-> If none of the password methods are provided (neither `-p` nor `-g`), the password will be the content of the *
-*clipboard**
+> If none of the password methods are provided (neither `-p` nor `-g`), the password will be the content of the \*
+> \*clipboard\*\*
 
 ## Security Principles
 
@@ -45,15 +45,15 @@ nix run github:/xavier2p/fortress
 
 1. Clone the repository
 
- ```sh
- git clone https://github.com/xavier2p/fortress && cd fortress
- ```
+```sh
+git clone https://github.com/xavier2p/fortress && cd fortress
+```
 
 2. Install the binary
 
- ```sh
- cargo install --path .
- ```
+```sh
+cargo install --path .
+```
 
 ## Usage
 
