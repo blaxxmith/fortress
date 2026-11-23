@@ -6,7 +6,7 @@ use aes_gcm::{
     aead::{Aead, KeyInit},
 };
 use argon2::{Argon2, Params};
-use rand::RngCore;
+use rand::Rng;
 use serde::{Deserialize, Serialize};
 
 /// Structure of the database.

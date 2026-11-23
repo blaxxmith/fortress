@@ -62,7 +62,7 @@ pub fn load_vault(args: GeneralArgs) -> Result<Vec<PasswordEntry>, FortressError
 /// ## Returns:
 /// A string containing the generated password.
 pub fn generate_password(length: usize) -> String {
-    use rand::Rng;
+    use rand::RngExt;
     const CHARSET: &[u8] =
         b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789)(*&^%$#@!~";
     let mut rng = rand::rng();
