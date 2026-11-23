@@ -5,6 +5,7 @@ stages:
 include:
 - template: Security/SAST-IaC.latest.gitlab-ci.yml
 - template: Security/SAST.gitlab-ci.yml
+- template: Jobs/Dependency-Scanning.v2.gitlab-ci.yml
 
 sast:
   stage: test
