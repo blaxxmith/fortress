@@ -73,7 +73,7 @@
         devShells.default = pkgs.mkShell {
           name = "rust";
           inherit nativeBuildInputs;
-          packages = with pkgs; [cargo-audit bacon cargo-nextest cargo-llvm-cov] ++ [toolchain];
+          packages = with pkgs; [cargo-audit cargo-edit bacon cargo-nextest cargo-llvm-cov] ++ [toolchain];
           shellHook = ''
             echo "Rust DevShell. Versions:"
             echo "- $(rustc --version)"
