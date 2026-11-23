@@ -6,6 +6,7 @@ description = "A simple password safe CLI app"
 authors = ["Blaxxmith", "Axxiar"]
 repository = "github.com/xavier2p/fortress"
 readme = "README.md"
+rust-version = "1.100"
 
 [[bin]]
 name = "frtrs"
